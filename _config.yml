@@ -79,7 +79,10 @@ sass:
   load_paths:
     - _sass
     - node_modules/foundation-sites/scss
-  style: :compressed # You might prefer to minify using :compressed or :expanded
+  sass_dir:
+    - _sass
+    - node_modules/foundation-sites/scss
+  style: compressed # You might prefer to minify using :compressed or :expanded
 
 # Use the following plug-ins
 gems:

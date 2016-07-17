@@ -1,0 +1,18 @@
+---
+---
+
+@import "settings/settings";
+
+$body-background: $black;
+$body-font-color: $light-gray;
+
+$anchor-color: $white;
+
+$topbar-background: none;
+
+$foundation-palette: (
+    primary: $light-gray
+);
+
+@import "foundation";
+@include foundation-everything;

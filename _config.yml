@@ -76,12 +76,6 @@ kramdown:
 
 # Set the Sass partials directory, as we're using @imports
 sass:
-  load_paths:
-    - _sass
-    - node_modules/foundation-sites/scss
-  sass_dir:
-    - _sass
-    - node_modules/foundation-sites/scss
   style: compressed # You might prefer to minify using :compressed or :expanded
 
 # Use the following plug-ins

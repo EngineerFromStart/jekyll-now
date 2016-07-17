@@ -2,17 +2,43 @@
 layout: default
 ---
 
-<div class="posts">
-  {% for post in site.posts %}
-    <article class="post">
-
-      <h1><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h1>
-
-      <div class="entry">
-        {{ post.excerpt }}
-      </div>
-
-      <a href="{{ site.baseurl }}{{ post.url }}" class="read-more">Read More</a>
-    </article>
-  {% endfor %}
+<link rel="stylesheet" type="text/css" href="css/timeline.css">
+<div class="text-center">
+    <h5>Little bit about me</h5>
 </div>
+{% assign ordered_events = site.events | sort: "date" %}
+
+<ul class="timeline">
+    <li class-"timeline-full">
+        {% include analytics.html %}
+    </li>
+
+    {% for event in ordered_events reversed%}
+    {% assign loopindex = forloop.index | modulo:2 %}
+    {% if loopindex == 1 %}
+    <li>
+    {% else %}
+    <li class="timeline-inverted">
+    {% endif %}
+        <div class="timeline-badge"></div>
+        <div class="timeline-panel">
+            <div class="timeline-heading">
+                <h4>{{ event.title }}</h4>
+                <label class="text-right">{{ event.date }}</label>
+            </div>
+            {% if event.content and event.content != "" and event.content != nil %}
+            <div class="timeline-body">
+                <p>{{ event.content }}</p>
+            </div>
+            {% endif %}
+
+            {% if event.footer and event.footer != "" and event.footer != nil %}
+            <div class="timeline-footer">
+                <p class="text-right"></p>
+            </div>
+            {% endif %}
+        </div>
+    </li>
+    {% endfor %}
+    <li class="clearfix no-float"></li>
+</ul>

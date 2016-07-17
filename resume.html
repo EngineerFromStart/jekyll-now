@@ -1,0 +1,27 @@
+---
+layout: default
+---
+
+<script src="/lib/hexagon/hexagons.js"></script>
+<link href="/lib/hexagon/hexagon.css" type="text/stylesheet">
+
+<div id="resume">
+    {% for project in site.projects %}
+        {% assign loopindex = forloop.index %}
+        {% assign projectId = "project_" | append: loopindex %}
+        {% assign projectIcon = "/images/Projects_temp.png" %}
+        {% if project.icon and project.icon != "" and project.icon != nil %}
+        {% assign projectIcon = project.icon %}
+        {% endif %}
+        <a href="{{ site.baseurl }}{{ project.url }}"><canvas id="{{ projectId }}" width="130" height="150"></canvas></a>
+        <script>
+            var hex = new Hexagon("#{{projectId}}", {
+                sideLength: 75,
+                fill: {
+                    type: "image",
+                    value: "{{projectIcon}}"
+                }
+            });
+        </script>
+    {% endfor %}
+</div>

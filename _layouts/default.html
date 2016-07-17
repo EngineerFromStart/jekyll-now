@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
-  <head>
+
+<head>
     <title>{% if page.title %}{{ page.title }} – {% endif %}{{ site.name }} – {{ site.description }}</title>
 
     {% include meta.html %}
@@ -13,39 +14,43 @@
     <link rel="alternate" type="application/rss+xml" title="{{ site.name }} - {{ site.description }}" href="{{ site.baseurl }}/feed.xml" />
 
     <!-- Created with Jekyll Now - http://github.com/barryclark/jekyll-now -->
-  </head>
+</head>
 
-  <body>
-    <div class="wrapper-masthead">
-      <div class="container">
-        <header class="masthead clearfix">
-          <a href="{{ site.baseurl }}/" class="site-avatar"><img src="{{ site.avatar }}" /></a>
+<body>
+    <div class="small-10 small-offset-1 row column ">
+        <header class="top-bar">
+            <div>
+                <div class="top-bar-left">
+                    <ul class="menu">
+                        <li class="menu-text">
+                            {{ site.name }}
+                            <br> {{ site.description }}
+                        </li>
+                    </ul>
+                </div>
 
-          <div class="site-info">
-            <h1 class="site-name"><a href="{{ site.baseurl }}/">{{ site.name }}</a></h1>
-            <p class="site-description">{{ site.description }}</p>
-          </div>
-
-          <nav>
-            <a href="{{ site.baseurl }}/">Blog</a>
-            <a href="{{ site.baseurl }}/about">About</a>
-          </nav>
+                <nav class="top-bar-right">
+                    <ul class="menu">
+                        <li class="menu-text"><a href="{{ site.baseurl }}/blog">Blog</a></li>
+                        <li class="menu-text"><a href="{{ site.baseurl }}/resume">Resume</a></li>
+                        <li class="menu-text"><a href="{{ site.baseurl }}/what_i_think_i_know">Knowledge Graph</a></li>
+                        <li class="menu-text"><a href="{{ site.baseurl }}/about">About</a></li>
+                    </ul>
+                </nav>
+            </div>
         </header>
-      </div>
-    </div>
 
-    <div id="main" role="main" class="container">
-      {{ content }}
-    </div>
+        <div id="main" role="main" class="container">
+            {{ content }}
+        </div>
 
-    <div class="wrapper-footer">
-      <div class="container">
-        <footer class="footer">
-          {% include svg-icons.html %}
+        <footer class="text-center">
+            {% include svg-icons.html %}
         </footer>
-      </div>
+
+        {% include analytics.html %}
     </div>
 
-    {% include analytics.html %}
-  </body>
+</body>
+
 </html>

@@ -15,6 +15,12 @@ avatar: https://raw.githubusercontent.com/barryclark/jekyll-now/master/images/je
 # Flags below are optional
 #
 
+collections:
+  projects:
+    output: true
+    permalink: /projects/:path/
+  events:
+
 # Includes an icon in the footer for each username you enter
 footer-links:
   dribbble:
@@ -70,7 +76,10 @@ kramdown:
 
 # Set the Sass partials directory, as we're using @imports
 sass:
-  style: :expanded # You might prefer to minify using :compressed
+  load_paths:
+    - _sass
+    - node_modules/foundation-sites/scss
+  style: :compressed # You might prefer to minify using :compressed or :expanded
 
 # Use the following plug-ins
 gems:

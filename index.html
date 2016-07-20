@@ -1,44 +1,57 @@
 ---
 layout: default
 ---
-
-<link rel="stylesheet" type="text/css" href="css/timeline.css">
 <div class="text-center">
-    <h5>Little bit about me</h5>
+    <h1>Karandeep Singh</h1>
+    <h4>Full Stack Software Engineer | Critical Thinker | Aspiring Entreprenuer </h4>
 </div>
-{% assign ordered_events = site.events | sort: "date" %}
 
-<ul class="timeline">
-    <li class-"timeline-full">
-        {% include analytics.html %}
+<div class="posts">
+  {% for post in site.posts %}
+    <article class="post">
+
+      <h1><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h1>
+
+      <div class="entry">
+        {{ post.excerpt }}
+      </div>
+
+      <a href="{{ site.baseurl }}{{ post.url }}" class="read-more">Read More</a>
+    </article>
+  {% endfor %}
+</div>
+
+<div class="orbit" role="region" aria-label="Favorite Space Pictures" data-orbit>
+  <ul class="orbit-container">
+    <button class="orbit-previous" aria-label="previous"><span class="show-for-sr">Previous Slide</span>&#9664;</button>
+    <button class="orbit-next" aria-label="next"><span class="show-for-sr">Next Slide</span>&#9654;</button>
+    <li class="is-active orbit-slide">
+      <div>
+        <h3 class="text-center">You can also throw some text in here!</h3>
+        <p class="text-center">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde harum rem, beatae ipsa consectetur quisquam. Rerum ratione, delectus atque tempore sed, suscipit ullam, beatae distinctio cupiditate ipsam eligendi tempora expedita.</p>
+        <h3 class="text-center">This Orbit slide has chill</h3>
+      </div>
     </li>
-
-    {% for event in ordered_events reversed%}
-    {% assign loopindex = forloop.index | modulo:2 %}
-    {% if loopindex == 1 %}
-    <li>
-    {% else %}
-    <li class="timeline-inverted">
-    {% endif %}
-        <div class="timeline-badge"></div>
-        <div class="timeline-panel">
-            <div class="timeline-heading">
-                <h4>{{ event.title }}</h4>
-                <label class="text-right">{{ event.date }}</label>
-            </div>
-            {% if event.content and event.content != "" and event.content != nil %}
-            <div class="timeline-body">
-                <p>{{ event.content }}</p>
-            </div>
-            {% endif %}
-
-            {% if event.footer and event.footer != "" and event.footer != nil %}
-            <div class="timeline-footer">
-                <p class="text-right"></p>
-            </div>
-            {% endif %}
-        </div>
+    <li class="orbit-slide">
+      <div>
+        <h3 class="text-center">You can also throw some text in here!</h3>
+        <p class="text-center">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde harum rem, beatae ipsa consectetur quisquam. Rerum ratione, delectus atque tempore sed, suscipit ullam, beatae distinctio cupiditate ipsam eligendi tempora expedita.</p>
+        <h3 class="text-center">This Orbit slide has chill</h3>
+      </div>
     </li>
-    {% endfor %}
-    <li class="clearfix no-float"></li>
-</ul>
+    <li class="orbit-slide">
+      <div>
+        <h3 class="text-center">You can also throw some text in here!</h3>
+        <p class="text-center">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde harum rem, beatae ipsa consectetur quisquam. Rerum ratione, delectus atque tempore sed, suscipit ullam, beatae distinctio cupiditate ipsam eligendi tempora expedita.</p>
+        <h3 class="text-center">This Orbit slide has chill</h3>
+      </div>
+    </li>
+    <li class="orbit-slide">
+      <div>
+        <h3 class="text-center">You can also throw some text in here!</h3>
+        <p class="text-center">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde harum rem, beatae ipsa consectetur quisquam. Rerum ratione, delectus atque tempore sed, suscipit ullam, beatae distinctio cupiditate ipsam eligendi tempora expedita.</p>
+        <h3 class="text-center">This Orbit slide has chill</h3>
+      </div>
+    </li>
+  </ul>
+</div>

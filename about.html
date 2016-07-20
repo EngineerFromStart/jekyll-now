@@ -1,0 +1,49 @@
+---
+layout: page
+title: About
+permalink: /about/
+---
+
+Contact Info
+
+<link rel="stylesheet" type="text/css" href="{{ base }}/css/timeline.css">
+<div class="text-center">
+    <h5>Little bit about me</h5>
+</div>
+{% assign ordered_events = site.events | sort: "date" %}
+
+<ul class="timeline">
+    <li class="timeline-full">
+        {% include analytics.html %}
+    </li>
+
+    {% for event in ordered_events reversed%}
+    {% assign loopindex = forloop.index | modulo:2 %}
+
+    {% if loopindex == 1 %}
+    <li>
+    {% else %}
+    <li class="timeline-inverted">
+    {% endif %}
+        <div class="timeline-badge"></div>
+        <div class="timeline-panel">
+            <div class="timeline-heading">
+                <h5>{{ event.title }}</h5>
+                <h5 class="float-right">{{ event.date | date_to_string }}</h5>
+            </div>
+            {% if event.content and event.content != "" and event.content != nil %}
+            <div class="timeline-body">
+                {{ event.content }}
+            </div>
+            {% endif %}
+
+            {% if event.footer and event.footer != "" and event.footer != nil %}
+            <div class="timeline-footer">
+                <p class="text-right"></p>
+            </div>
+            {% endif %}
+        </div>
+    </li>
+    {% endfor %}
+    <li class="clearfix no-float"></li>
+</ul>

@@ -4,8 +4,13 @@
 <head>
     <title>{% if page.title %}{{ page.title }} – {% endif %}{{ site.name }} – {{ site.description }}</title>
 
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     {% include meta.html %}
 
+    {% include base.html %}
     <!--[if lt IE 9]>
       <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
@@ -23,18 +28,19 @@
             <div>
                 <div class="top-bar-left">
                     <ul class="menu">
-                        <li class="menu-text">
-                            {{ site.name }}
-                            <br> {{ site.description }}
-                        </li>
+                        <a href="{{ site.baseurl }}/">
+                            <li class="menu-text">
+                                Engineer From Start
+                            </li>
+                        </a>
                     </ul>
                 </div>
 
                 <nav class="top-bar-right">
                     <ul class="menu">
-                        <li class="menu-text"><a href="{{ site.baseurl }}/blog">Blog</a></li>
+                        <li class="menu-text"><a href="{{ site.baseurl }}/">Blog</a></li>
                         <li class="menu-text"><a href="{{ site.baseurl }}/resume">Resume</a></li>
-                        <li class="menu-text"><a href="{{ site.baseurl }}/what_i_think_i_know">Knowledge Graph</a></li>
+                        <li class="menu-text"><a href="{{ site.baseurl }}/knowledge-graph">Knowledge Graph</a></li>
                         <li class="menu-text"><a href="{{ site.baseurl }}/about">About</a></li>
                     </ul>
                 </nav>
@@ -51,6 +57,12 @@
 
         {% include analytics.html %}
     </div>
+    <script src="{{ site.baseurl }}/node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="{{ site.baseurl }}/node_modules/what-input/what-input.min.js"></script>
+    <script src="{{ site.baseurl }}/node_modules/foundation-sites/dist/foundation.min.js"></script>
+    <script>
+        $(document).foundation();
+    </script>
 
 </body>
 

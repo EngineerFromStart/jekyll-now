@@ -1,18 +1,25 @@
 ---
 ---
 
+@import "motion-ui";
 @import "settings/settings";
 
-$body-background: $black;
-$body-font-color: $light-gray;
+$body-background: $white;
+$body-font-color: $dark-gray;
 
-$anchor-color: $white;
+$anchor-color: $black;
 
 $topbar-background: none;
 
 $foundation-palette: (
-    primary: $light-gray
+    primary: $dark-gray
 );
 
 @import "foundation";
 @include foundation-everything;
+
+footer {
+    margin-top: 15px;
+    border-top: 2px solid #EE4D4D;
+    padding-top: 20px;
+}

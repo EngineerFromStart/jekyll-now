@@ -1,0 +1,20 @@
+---
+layout: default
+---
+<div class="posts">
+  {% for post in site.posts %}
+        <br>
+        <article class="post" style="background-image: url('{{ site.baseurl }}/images/{{post.background}}')">
+            <div class="post-text">
+            <span class="post-thumb float-left text-center">
+            {% include date-format.html %}
+                </span>
+                <h3><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h3>
+                <div class="entry">
+                    {{ post.content | strip_html | truncatewords: 100}}
+                </div>
+                <a href="{{ site.baseurl }}{{ post.url }}" class="read-more">Read More</a>
+            </div>
+        </article>
+  {% endfor %}
+</div>

@@ -1,8 +1,10 @@
 ---
 layout: post
-title: You're up and running!
+title: Let Practice a post, so to help with the website design.
+background: posts/2016-7-21-bg.jpg
 ---
-#### This guide got me started:
+
+This is not a real post. just a copy to test the website more. and the design
 
 Next you can update your site name, avatar and other options using the _config.yml file in the root of your repository (shown below).
 

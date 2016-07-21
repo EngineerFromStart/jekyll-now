@@ -10,3 +10,41 @@
 // ... Otherwise it really bloats up the top of the CSS file and makes it difficult to find the start
 @import "highlights";
 @import "svg-icons";
+
+
+footer {
+    margin-top: 15px;
+    border-top: 2px solid #EE4D4D;
+    padding-top: 20px;
+}
+
+.divider{
+    margin-top: 15px;
+    border-top: 2px solid #EE4D4D;
+    padding-top: 20px;
+}
+
+.post{
+    height: 400px;
+    position: relative;
+    background-color: #dc322f;
+}
+
+.post-text{
+    position: absolute;
+    top: 175px;
+    right: 0px;
+    background: white;
+    max-width: 75%;
+    max-height: 50%;
+}
+
+.post-thumb {
+    width: 80px;
+    height: 80px;
+    border: 1px solid;
+}
+
+.entry{
+    margin-top: 20px;
+}

@@ -17,9 +17,3 @@ $foundation-palette: (
 
 @import "foundation";
 @include foundation-everything;
-
-footer {
-    margin-top: 15px;
-    border-top: 2px solid #EE4D4D;
-    padding-top: 20px;
-}

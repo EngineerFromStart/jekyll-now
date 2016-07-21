@@ -6,52 +6,56 @@ layout: default
     <h4>Full Stack Software Engineer | Critical Thinker | Aspiring Entreprenuer </h4>
 </div>
 
-<div class="posts">
-  {% for post in site.posts %}
-    <article class="post">
-
-      <h1><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h1>
-
-      <div class="entry">
-        {{ post.excerpt }}
-      </div>
-
-      <a href="{{ site.baseurl }}{{ post.url }}" class="read-more">Read More</a>
-    </article>
-  {% endfor %}
-</div>
-
 <div class="orbit" role="region" aria-label="Favorite Space Pictures" data-orbit>
-  <ul class="orbit-container">
-    <button class="orbit-previous" aria-label="previous"><span class="show-for-sr">Previous Slide</span>&#9664;</button>
-    <button class="orbit-next" aria-label="next"><span class="show-for-sr">Next Slide</span>&#9654;</button>
-    <li class="is-active orbit-slide">
-      <div>
-        <h3 class="text-center">You can also throw some text in here!</h3>
-        <p class="text-center">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde harum rem, beatae ipsa consectetur quisquam. Rerum ratione, delectus atque tempore sed, suscipit ullam, beatae distinctio cupiditate ipsam eligendi tempora expedita.</p>
-        <h3 class="text-center">This Orbit slide has chill</h3>
-      </div>
-    </li>
-    <li class="orbit-slide">
-      <div>
-        <h3 class="text-center">You can also throw some text in here!</h3>
-        <p class="text-center">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde harum rem, beatae ipsa consectetur quisquam. Rerum ratione, delectus atque tempore sed, suscipit ullam, beatae distinctio cupiditate ipsam eligendi tempora expedita.</p>
-        <h3 class="text-center">This Orbit slide has chill</h3>
-      </div>
-    </li>
-    <li class="orbit-slide">
-      <div>
-        <h3 class="text-center">You can also throw some text in here!</h3>
-        <p class="text-center">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde harum rem, beatae ipsa consectetur quisquam. Rerum ratione, delectus atque tempore sed, suscipit ullam, beatae distinctio cupiditate ipsam eligendi tempora expedita.</p>
-        <h3 class="text-center">This Orbit slide has chill</h3>
-      </div>
-    </li>
-    <li class="orbit-slide">
-      <div>
-        <h3 class="text-center">You can also throw some text in here!</h3>
-        <p class="text-center">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde harum rem, beatae ipsa consectetur quisquam. Rerum ratione, delectus atque tempore sed, suscipit ullam, beatae distinctio cupiditate ipsam eligendi tempora expedita.</p>
-        <h3 class="text-center">This Orbit slide has chill</h3>
-      </div>
-    </li>
-  </ul>
+    <ul class="orbit-container">
+        <button class="orbit-previous" aria-label="previous"><span class="show-for-sr">Previous Slide</span>&#9664;</button>
+        <button class="orbit-next" aria-label="next"><span class="show-for-sr">Next Slide</span>&#9654;</button>
+        <li class="is-active orbit-slide">
+            <div>
+                <h3 class="text-center">You can also throw some text in here!</h3>
+                <p class="text-center">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde harum rem, beatae ipsa consectetur quisquam. Rerum ratione, delectus atque tempore sed, suscipit ullam, beatae distinctio cupiditate ipsam eligendi tempora expedita.</p>
+                <h3 class="text-center">This Orbit slide has chill</h3>
+            </div>
+        </li>
+        <li class="orbit-slide">
+            <div>
+                <h3 class="text-center">You can also throw some text in here!</h3>
+                <p class="text-center">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde harum rem, beatae ipsa consectetur quisquam. Rerum ratione, delectus atque tempore sed, suscipit ullam, beatae distinctio cupiditate ipsam eligendi tempora expedita.</p>
+                <h3 class="text-center">This Orbit slide has chill</h3>
+            </div>
+        </li>
+        <li class="orbit-slide">
+            <div>
+                <h3 class="text-center">You can also throw some text in here!</h3>
+                <p class="text-center">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde harum rem, beatae ipsa consectetur quisquam. Rerum ratione, delectus atque tempore sed, suscipit ullam, beatae distinctio cupiditate ipsam eligendi tempora expedita.</p>
+                <h3 class="text-center">This Orbit slide has chill</h3>
+            </div>
+        </li>
+        <li class="orbit-slide">
+            <div>
+                <h3 class="text-center">You can also throw some text in here!</h3>
+                <p class="text-center">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde harum rem, beatae ipsa consectetur quisquam. Rerum ratione, delectus atque tempore sed, suscipit ullam, beatae distinctio cupiditate ipsam eligendi tempora expedita.</p>
+                <h3 class="text-center">This Orbit slide has chill</h3>
+            </div>
+        </li>
+    </ul>
+</div>
+<div class="divider"></div>
+<div class="posts">
+    <h4> Recent Post </h4>
+    {% for post in site.posts limit:1 %}
+    <article class="post" style="background-image: url('{{ site.baseurl }}/images/{{post.background}}')">
+        <div class="post-text">
+            <span class="post-thumb float-left text-center">
+                {% include date-format.html %}
+            </span>
+            <h3><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h3>
+            <div class="entry">
+                {{ post.content | strip_html | truncatewords: 100}}
+            </div>
+
+            <a href="{{ site.baseurl }}{{ post.url }}" class="read-more">Read More</a>
+        </div>
+    </article>
+    {% endfor %}
 </div>

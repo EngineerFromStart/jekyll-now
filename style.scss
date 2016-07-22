@@ -13,9 +13,7 @@
 
 
 footer {
-    margin-top: 15px;
-    border-top: 2px solid #EE4D4D;
-    padding-top: 20px;
+    margin-top: 35px;
 }
 
 .divider{
@@ -37,14 +35,20 @@ footer {
     background: white;
     max-width: 75%;
     max-height: 50%;
+    padding: 10px;
+    min-height: 45%;
 }
 
 .post-thumb {
     width: 80px;
     height: 80px;
     border: 1px solid;
+    padding: 15px 0px;
+    margin: 3px;
 }
 
 .entry{
     margin-top: 20px;
+    overflow: hidden;
+    max-height: 50px;
 }

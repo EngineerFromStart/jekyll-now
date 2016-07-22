@@ -1,11 +1,6 @@
 ---
 layout: default
 ---
-<div class="text-center">
-    <h1>Karandeep Singh</h1>
-    <h4>Full Stack Software Engineer | Critical Thinker | Aspiring Entreprenuer </h4>
-</div>
-
 <div class="orbit" role="region" aria-label="Favorite Space Pictures" data-orbit>
     <ul class="orbit-container">
         <button class="orbit-previous" aria-label="previous"><span class="show-for-sr">Previous Slide</span>&#9664;</button>
@@ -40,18 +35,19 @@ layout: default
         </li>
     </ul>
 </div>
-<div class="divider"></div>
+<br>
+<br>
+
 <div class="posts">
-    <h4> Recent Post </h4>
     {% for post in site.posts limit:1 %}
     <article class="post" style="background-image: url('{{ site.baseurl }}/images/{{post.background}}')">
         <div class="post-text">
             <span class="post-thumb float-left text-center">
                 {% include date-format.html %}
             </span>
-            <h3><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h3>
+            <h3><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title | truncatewords: 30 }}</a></h3>
             <div class="entry">
-                {{ post.content | strip_html | truncatewords: 100}}
+                {{ post.content | strip_html | truncatewords: 100}}...
             </div>
 
             <a href="{{ site.baseurl }}{{ post.url }}" class="read-more">Read More</a>

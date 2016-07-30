@@ -23,7 +23,7 @@
 </head>
 
 <body>
-    <div class="small-12 medium-10 medium-offset-1 row column ">
+    <div class="medium-10 large-8 medium-offset-1 large-offset-2 row">
         <br>
         <header class="top-bar">
             <div>
@@ -40,7 +40,7 @@
                 <nav class="top-bar-right">
                     <ul class="menu">
                         <li class="menu-text"><a href="{{ site.baseurl }}/blog">Blog</a></li>
-                        <li class="menu-text"><a href="{{ site.baseurl }}/resume">Resume</a></li>
+                        <li class="menu-text"><a href="{{ site.baseurl }}/resume">Showcase</a></li>
                         <li class="menu-text"><a href="{{ site.baseurl }}/knowledge-graph">Knowledge Graph</a></li>
                         <li class="menu-text"><a href="{{ site.baseurl }}/about">About</a></li>
                     </ul>
@@ -48,10 +48,11 @@
             </div>
         </header>
         <br>
-        <div id="main" role="main" class="container">
-            {{ content }}
-        </div>
-
+    </div>
+    <div id="main" role="main" class="container">
+        {{ content }}
+    </div>
+    <div class="medium-10 large-8 medium-offset-1 large-offset-2 row columns">
         <footer class="text-center">
             {% include svg-icons.html %}
         </footer>

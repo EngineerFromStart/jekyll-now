@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: full
 ---
 <div class="orbit" role="region" aria-label="Favorite Space Pictures" data-orbit>
     <ul class="orbit-container">
@@ -19,33 +19,19 @@ layout: default
                 <h3 class="text-center">This Orbit slide has chill</h3>
             </div>
         </li>
-        <li class="orbit-slide">
-            <div>
-                <h3 class="text-center">You can also throw some text in here!</h3>
-                <p class="text-center">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde harum rem, beatae ipsa consectetur quisquam. Rerum ratione, delectus atque tempore sed, suscipit ullam, beatae distinctio cupiditate ipsam eligendi tempora expedita.</p>
-                <h3 class="text-center">This Orbit slide has chill</h3>
-            </div>
-        </li>
-        <li class="orbit-slide">
-            <div>
-                <h3 class="text-center">You can also throw some text in here!</h3>
-                <p class="text-center">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde harum rem, beatae ipsa consectetur quisquam. Rerum ratione, delectus atque tempore sed, suscipit ullam, beatae distinctio cupiditate ipsam eligendi tempora expedita.</p>
-                <h3 class="text-center">This Orbit slide has chill</h3>
-            </div>
-        </li>
     </ul>
 </div>
-<br>
-<br>
-
+<div class="medium-10 large-8 medium-offset-1 large-offset-2 row">
 <div class="posts">
     {% for post in site.posts limit:1 %}
     <article class="post" style="background-image: url('{{ site.baseurl }}/images/{{post.background}}')">
-        <div class="post-text">
-            <span class="post-thumb float-left text-center">
-                {% include date-format.html %}
-            </span>
-            <h3><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title | truncatewords: 30 }}</a></h3>
+        <div class="post-container">
+            <div class="post-header">
+                <span class="post-thumb text-center">
+                    {% include date-format.html %}
+                </span>
+                <h3><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title | truncatewords: 30 }}</a></h3>
+            </div>
             <div class="entry">
                 {{ post.content | strip_html | truncatewords: 100}}...
             </div>
@@ -54,4 +40,5 @@ layout: default
         </div>
     </article>
     {% endfor %}
+</div>
 </div>

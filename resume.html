@@ -1,69 +1,69 @@
 ---
-layout: default
+layout: centered
 ---
 
 <script src="/lib/hexagon/hexagons.js"></script>
 <link href="/lib/hexagon/hexagon.css" type="text/stylesheet">
 
 <div class="row collapse">
-  <div class="medium-3 columns">
-    <ul class="tabs vertical" id="example-vert-tabs" data-tabs>
-      <li class="tabs-title is-active"><a href="#CV" aria-selected="true">CV</a></li>
-      <li class="tabs-title"><a href="#projects">Projects</a></li>
-      <li><p>Tutorials and Lessons</p></li>
-      <li class="tabs-title"><a href="#tutorials">Software</a></li>
-    </ul>
+    <div class="medium-3 columns">
+        <ul class="tabs vertical" id="example-vert-tabs" data-tabs>
+            <li class="tabs-title is-active"><a href="#CV" aria-selected="true">CV</a></li>
+            <li class="tabs-title"><a href="#projects">Projects</a></li>
+            <li>
+                <p>Tutorials and Lessons</p>
+            </li>
+            <li class="tabs-title"><a href="#tutorials">Software</a></li>
+        </ul>
     </div>
     <div class="medium-9 columns">
-    <div class="tabs-content vertical" data-tabs-content="example-vert-tabs">
-      <div class="tabs-panel is-active" id="CV">
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-      </div>
-      <div class="tabs-panel" id="projects">
-              {% for project in site.projects %}
-                  {% assign loopindex = forloop.index %}
-                  {% assign projectId = "project_" | append: loopindex %}
-                  {% assign projectIcon = "/images/Projects_temp.png" %}
-                  {% if project.icon and project.icon != "" and project.icon != nil %}
-                    {% assign projectIcon = project.icon %}
-                  {% endif %}
-                  <a href="{{ site.baseurl }}{{ project.url }}"><canvas id="{{ projectId }}" width="130" height="150"></canvas></a>
-                  <script>
-                      var hex = new Hexagon("#{{projectId}}", {
-                          sideLength: 75,
-                          fill: {
-                              type: "image",
-                              value: "{{projectIcon}}"
-                          }
-                      });
-                  </script>
-              {% endfor %}
-      </div>
-      <div class="tabs-panel" id="tutorials">
-            <ul class="tabs" data-tabs id="example-tabs">
-                <li class="tabs-title is-active"><a href="#programming" aria-selected="true">Programming</a></li>
-                <li class="tabs-title"><a href="#networking">Networking</a></li>
-            </ul>
-            <div class="tabs-content" data-tabs-content="example-tabs">
-              <div class="tabs-panel is-active" id="programming">
-                <p>one</p>{
-                <p>Check me out! I'm a super cool Tab panel with text content!</p>
-              </div>
-              <div class="tabs-panel" id="networking">
-                  <ul class="accordion" data-accordion role="tablist" data-allow-all-closed="true">
-                      {% for tutorial in site.tutorials-networking %}
-                      {% assign loopIndex = forloop.index %}
-                      <li class="accordion-item {{ loopIndex == 0 ? 'is-active': '' }}">
-                        <a href="#panel1d" role="tab" class="accordion-title" id="{{tutorial.name}}-heading" aria-controls="panel1d">{{tutorial.title}}</a>
-                        <div id="panel1d" class="accordion-content" role="tabpanel" data-tab-content aria-labelledby="{{tutorial.name}}-heading">
-                          {{ tutorial.content }}
-                        </div>
-                      </li>
-                      {% endfor %}
-                    </ul>
-              </div>
+        <div class="tabs-content vertical" data-tabs-content="example-vert-tabs">
+            <div class="tabs-panel is-active" id="CV">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
             </div>
-      </div>
+            <div class="tabs-panel" id="projects">
+                {% for project in site.projects %} {% assign loopindex = forloop.index %} {% assign projectId = "project_" | append: loopindex %} {% assign projectIcon = "/images/Projects_temp.png" %} {% if project.icon and project.icon != "" and project.icon != nil
+                %} {% assign projectIcon = project.icon %} {% endif %}
+                <a href="{{ site.baseurl }}{{ project.url }}" style="display: inline-block; text-align: center;">
+                    <canvas id="{{ projectId }}" width="130" height="150"></canvas>
+                    <br><br><br>
+                    <span class="menu-text">{{ project.title }}</span>
+                </a>
+                <script>
+                    var hex = new Hexagon("#{{projectId}}", {
+                        sideLength: 75,
+                        fill: {
+                            type: "image",
+                            value: "{{projectIcon}}"
+                        }
+                    });
+                </script>
+                {% endfor %}
+            </div>
+            <div class="tabs-panel" id="tutorials">
+                <ul class="tabs" data-tabs id="example-tabs">
+                    <li class="tabs-title is-active"><a href="#programming" aria-selected="true">Programming</a></li>
+                    <li class="tabs-title"><a href="#networking">Networking</a></li>
+                </ul>
+                <div class="tabs-content" data-tabs-content="example-tabs">
+                    <div class="tabs-panel is-active" id="programming">
+                        <p>one</p>{
+                        <p>Check me out! I'm a super cool Tab panel with text content!</p>
+                    </div>
+                    <div class="tabs-panel" id="networking">
+                        <ul class="accordion" data-accordion role="tablist" data-allow-all-closed="true">
+                            {% for tutorial in site.tutorials-networking %} {% assign loopIndex = forloop.index %}
+                            <li class="accordion-item {{ loopIndex == 0 ? 'is-active': '' }}">
+                                <a href="#panel1d" role="tab" class="accordion-title" id="{{tutorial.name}}-heading" aria-controls="panel1d">{{tutorial.title}}</a>
+                                <div id="panel1d" class="accordion-content" role="tabpanel" data-tab-content aria-labelledby="{{tutorial.name}}-heading">
+                                    {{ tutorial.content }}
+                                </div>
+                            </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-  </div>
 </div>

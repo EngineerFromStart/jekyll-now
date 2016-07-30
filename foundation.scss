@@ -16,5 +16,16 @@ $foundation-palette: (
     primary: $dark-gray
 );
 
+
+
 @import "foundation";
 @include foundation-everything;
+
+.orbit-previous, .orbit-next{
+    height: 100%;
+}
+
+.orbit-container {
+    background: #f8f8f8;
+    margin: 25px 0px;
+}

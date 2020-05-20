@@ -1,7 +1,24 @@
 {
+  "name": "engineerfromstart.github.io",
+  "version": "0.0.1",
+  "description": "Blog (Karandeep Singh)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EngineerFromStart/engineerfromstart.github.io.git"
+  },
+  "author": "Karandeep Singh (kd (1990Singh.karandeep@gmail.com)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/EngineerFromStart/engineerfromstart.github.io/issues"
+  },
+  "homepage": "https://github.com/EngineerFromStart/engineerfromstart.github.io#readme",
   "dependencies": {
-    "foundation-sites": "^6.2.3",
-    "masonry-layout": "^4.1.0",
-    "motion-ui": "^1.2.2"
+    "gatsby": "^2.21.33",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
   }
 }
